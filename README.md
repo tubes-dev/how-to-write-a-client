@@ -1,10 +1,10 @@
 # How To Write Your Own Client
-Tubes provides some extra functionality to the websocket connections to allow for peristent client identification as well as direct messaging. This allows a simple websocket connection to act like a fully developed application. However to fully take advantage of these features, you need to develop your client in a way that will support them 
+Tubes provides some extra functionality to the websocket connections to allow for peristent client identification as well as direct messaging. This allows a simple websocket connection to act like a fully developed application. However to fully take advantage of these features, you need to develop your client in a way that will support them.
 
 ## 🔌 Connecting to a channel.
 When a client connects to `tubes.dev`, it will receive two messages. An `identity` message and a `connected` message.
 
-The `identity` message, identifies the client with their own unique ID. All messages are relayed to all clients so if the client doesn't care about their own messages, then this `client_id` can be filtered out. A `jwt` token is supplied for reconnecting so that the client can keep their `client_id`
+The `identity` message, identifies the client with their own unique ID. All messages are relayed to all clients so if the client doesn't care about their own messages, then this `client_id` can be filtered out. A `jwt` token is supplied for reconnecting so that the client can keep their `client_id`.
 
 The `connected` and corresponding `disconnected` messages, are broadcasted to all connected clients, including the client
 that connected. It informs all clients that a client with the client id provided, has connected or disconnected from the channel. It also provides the current count of connected clients.
